@@ -1,0 +1,10 @@
+{
+    "azureFunctions.pythonVenv": ".venv",
+    "azureFunctions.scmDoBuildDuringDeployment": true,
+    "python.autoComplete.extraPaths": ["./.venv"],
+    "azureFunctions.projectLanguage": "Python",
+    "azureFunctions.projectRuntime": "~4",
+    "python.analysis.extraPaths": [
+        "./.venv"
+    ]
+}
