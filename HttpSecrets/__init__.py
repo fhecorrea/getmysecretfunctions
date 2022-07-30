@@ -2,13 +2,13 @@ import logging
 
 import azure.functions as func
 from fastapi import FastAPI #, WebSocket, WebSocketDisconnect
-#from fastapi.middleware.cors import CORSMiddleware
+from fastapi.middleware.cors import CORSMiddleware
 from routers import misc, secrets, users
 from os import getenv
 #from models import ConnectionManager
 
 app = FastAPI(title="Get my secret API", debug=True)
-"""
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -16,7 +16,7 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"]
 )
-"""
+
 app.include_router(misc.router) # /misc temp routes
 app.include_router(secrets.router)
 app.include_router(users.router)
