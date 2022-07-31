@@ -11,10 +11,10 @@ app = FastAPI(title="Get my secret API", debug=True)
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=["http://localhost:3000/", "https://kind-wave-0e3c74210.1.azurestaticapps.net/"],
     allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"]
+    allow_methods=["GET", "POST", "OPTIONS"],
+    allow_headers="*"
 )
 
 app.include_router(misc.router) # /misc temp routes
