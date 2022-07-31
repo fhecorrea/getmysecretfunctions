@@ -9,6 +9,14 @@ from os import getenv
 
 app = FastAPI(title="Get my secret API", debug=True)
 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"]
+)
+
 app.include_router(misc.router) # /misc temp routes
 app.include_router(secrets.router)
 app.include_router(users.router)
