@@ -3,7 +3,7 @@ import logging
 import azure.functions as func
 from fastapi import FastAPI #, WebSocket, WebSocketDisconnect
 from fastapi.middleware.cors import CORSMiddleware
-from routers import misc, secrets, users
+from routers import secrets, users
 from os import getenv
 #from models import ConnectionManager
 
@@ -17,7 +17,6 @@ app.add_middleware(
     allow_headers=["*"]
 )
 
-app.include_router(misc.router) # /misc temp routes
 app.include_router(secrets.router)
 app.include_router(users.router)
 
